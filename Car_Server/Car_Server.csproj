@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E945F1A-06A0-44E2-83FD-E5F0F8467F11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Car_Server</RootNamespace>
+    <AssemblyName>Car_Server</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="3D_Control_Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\3D interface\3D_Control_Interface\3D_Control_Interface\bin\Debug\3D_Control_Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV, Version=2.0.1.0, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL" />
+    <Reference Include="Emgu.Util, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL" />
+    <Reference Include="ES_Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Fuzzy Code &amp;&amp; Libraries\ES_Lib\ES_Lib\bin\Debug\ES_Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="FuzzyLogic_Unit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Fuzzy Code &amp;&amp; Libraries\FuzzyLogic_Unit\FuzzyLogic_Unit\bin\Debug\FuzzyLogic_Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="Image_Processing_Unit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Image_Processing_Unit\Image_Processing_Unit\bin\Debug\Image_Processing_Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ccr.Core, Version=2.1.61.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="mjpeg, Version=1.0.3737.40182, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\cec\Downloads\cv_src\mjpeg\bin\Debug\mjpeg.dll</HintPath>
+    </Reference>
+    <Reference Include="PathPanel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\cec\Documents\Visual Studio 2008\Projects\PathPanel\PathPanel\bin\Release\PathPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Serial_Communication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Serial_Communication\Serial_Communication\bin\Debug\Serial_Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="videosource, Version=1.0.3737.37520, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control_User.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="Neural Network\InitNN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neural Network\InitNN.Designer.cs">
+      <DependentUpon>InitNN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Neural Network\Debugger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neural Network\Debugger.designer.cs">
+      <DependentUpon>Debugger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawingPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsers.designer.cs">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Car_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Car_Status.Designer.cs">
+      <DependentUpon>Car_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Control_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Control_Interface.Designer.cs">
+      <DependentUpon>Control_Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\DB_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\DB_Settings.Designer.cs">
+      <DependentUpon>DB_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Rules and Inference\Console_Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Rules and Inference\Console_Interface.Designer.cs">
+      <DependentUpon>Console_Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Rules and Inference\Inference_Tracer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Rules and Inference\Inference_Tracer.Designer.cs">
+      <DependentUpon>Inference_Tracer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Rules and Inference\SystemInitializer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Rules and Inference\SystemInitializer.Designer.cs">
+      <DependentUpon>SystemInitializer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Fuzzy_Variable_Visualizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Fuzzy_Variable_Visualizer.Designer.cs">
+      <DependentUpon>Fuzzy_Variable_Visualizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image Processing\Live_Video.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image Processing\Live_Video.Designer.cs">
+      <DependentUpon>Live_Video.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Image Processing\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image Processing\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Neural Network\ImageProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neural Network\ImageProcessing.designer.cs">
+      <DependentUpon>ImageProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Neural Network\Layer.cs" />
+    <Compile Include="Neural Network\Layers_Manager.cs" />
+    <Compile Include="Neural Network\Main Interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neural Network\Main Interface.designer.cs">
+      <DependentUpon>Main Interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neural Network\Neuron.cs" />
+    <Compile Include="Obstacle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\Car_Status.resx">
+      <DependentUpon>Car_Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Control_Interface.resx">
+      <DependentUpon>Control_Interface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Neural Network\Debugger.resx">
+      <DependentUpon>Debugger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsers.resx">
+      <DependentUpon>EditUsers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Fuzzy Variables\DB_Settings.resx">
+      <DependentUpon>DB_Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Rules and Inference\Console_Interface.resx">
+      <DependentUpon>Console_Interface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Rules and Inference\Inference_Tracer.resx">
+      <DependentUpon>Inference_Tracer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Rules and Inference\SystemInitializer.resx">
+      <DependentUpon>SystemInitializer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Fuzzy Variables\Fuzzy_Variable_Visualizer.resx">
+      <DependentUpon>Fuzzy_Variable_Visualizer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image Processing\Live_Video.resx">
+      <DependentUpon>Live_Video.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Image Processing\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Neural Network\ImageProcessing.resx">
+      <DependentUpon>ImageProcessing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Neural Network\InitNN.resx">
+      <DependentUpon>InitNN.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Neural Network\Main Interface.resx">
+      <DependentUpon>Main Interface.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Fuzzy Variables\Variable_Add.resx">
+      <DependentUpon>Variable_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Fuzzy Variables\Variable_Delete.resx">
+      <DependentUpon>Variable_Delete.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expert Unit\Fuzzy Variables\Variable_Modify.resx">
+      <DependentUpon>Variable_Modify.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System_Event_Log.resx">
+      <DependentUpon>System_Event_Log.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transport Manager\Transport_Status.resx">
+      <DependentUpon>Transport_Status.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Variable_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Variable_Add.Designer.cs">
+      <DependentUpon>Variable_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Variable_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Variable_Delete.Designer.cs">
+      <DependentUpon>Variable_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Variable_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expert Unit\Fuzzy Variables\Variable_Modify.Designer.cs">
+      <DependentUpon>Variable_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenCapture.cs" />
+    <Compile Include="System_Event_Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System_Event_Log.Designer.cs">
+      <DependentUpon>System_Event_Log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transport Manager\Transport_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transport Manager\Transport_Status.Designer.cs">
+      <DependentUpon>Transport_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Resources\Top_Viewport.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\VEGA_Car.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Map.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
